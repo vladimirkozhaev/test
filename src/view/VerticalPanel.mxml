@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:parsley="http://www.spicefactory.org/parsley"
+         backgroundColor="{rectModel.color}" width="{rectModel.width}" height="{rectModel.height}"
+         visible="{rectModel.isVisible}" cornerRadius="{rectModel.isVisible?3:0}"
+         borderStyle="{rectModel.isVisible?'solid':'none'}">
+
+
+    <fx:Declarations>
+        <parsley:Configure/>
+    </fx:Declarations>
+    <fx:Script><![CDATA[
+        import model.RectangleModel;
+
+        [Bindable]
+        public var rectModel:RectangleModel;
+        ]]></fx:Script>
+
+</mx:HBox>

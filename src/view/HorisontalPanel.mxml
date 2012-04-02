@@ -1,0 +1,42 @@
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:parsley="http://www.spicefactory.org/parsley"
+         backgroundColor="{rectModel.color}" width="{rectModel.width}" height="{rectModel.height}"
+         visible="{rectModel.isVisible}" cornerRadius="{rectModel.isVisible?3:0}"
+         borderStyle="{rectModel.isVisible?'solid':'none'}">
+
+
+    <fx:Declarations>
+        <parsley:Configure/>
+    </fx:Declarations>
+
+    <fx:Script><![CDATA[
+        import model.RectangleModel;
+
+        import mx.controls.Alert;
+
+        [Bindable]
+        public var rectModel:RectangleModel;
+        [Bindable]
+        public var leftModel:RectangleModel;
+        [Bindable]
+        public var rightModel:RectangleModel
+        ]]></fx:Script>
+
+    <mx:HBox width="50%" height="100%" horizontalAlign="left" verticalAlign="middle" visible="{leftModel.isVisible}">
+
+        <mx:HBox width="{leftModel.width}" height="{leftModel.height}" backgroundColor="{leftModel.color}"
+                 cornerRadius="{leftModel.isVisible?3:0}" borderStyle="{leftModel.isVisible?'solid':'none'}">
+
+
+        </mx:HBox>
+    </mx:HBox>
+    <mx:HBox width="50%" height="100%" horizontalAlign="right" verticalAlign="middle" visible="{rightModel.isVisible}">
+
+        <mx:HBox width="{rightModel.width}" height="{rightModel.height}" backgroundColor="{rightModel.color}"
+                 visible="{rightModel.isVisible}" cornerRadius="{rightModel.isVisible?3:0}"
+                 borderStyle="{rightModel.isVisible?'solid':'none'}">
+
+
+        </mx:HBox>
+    </mx:HBox>
+</mx:HBox>

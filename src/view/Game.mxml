@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         width="800" height="600" xmlns:parsley="http://www.spicefactory.org/parsley"
+         xmlns:view="view.*">
+
+
+    <fx:Binding destination="upPanel.rectModel" source="{this.upModel}"/>
+
+    <fx:Binding destination="downPanel.rectModel" source="{this.downModel}"/>
+    <fx:Binding destination="leftPanel.rectModel" source="{this.leftModel}"/>
+    <fx:Binding destination="rightPanel.rectModel" source="{this.rightModel}"/>
+
+
+    <fx:Binding destination="downPanel.leftModel" source="{this.leftDownModel}"/>
+    <fx:Binding destination="downPanel.rightModel" source="{this.rightDownModel}"/>
+
+
+    <s:layout>
+        <s:VerticalLayout/>
+
+    </s:layout>
+
+    <view:HorisontalPanel id="upPanel"/>
+
+    <s:Group width="100%">
+        <s:layout>
+            <s:HorizontalLayout/>
+        </s:layout>
+        <s:Group width="50%">
+            <s:layout>
+                <s:HorizontalLayout horizontalAlign="left"/>
+            </s:layout>
+            <view:VerticalPanel id="leftPanel"/>
+        </s:Group>
+        <s:Group width="50%">
+            <s:layout>
+                <s:HorizontalLayout horizontalAlign="right"/>
+            </s:layout>
+            <view:VerticalPanel id="rightPanel"/>
+        </s:Group>
+    </s:Group>
+
+    <view:HorisontalPanel id="downPanel"/>
+
+
+    <fx:Script><![CDATA[
+        import model.RectangleModel;
+
+        [Bindable]
+        public var upModel:RectangleModel;
+        [Bindable]
+        public var downModel:RectangleModel;
+        [Bindable]
+        public var leftModel:RectangleModel;
+        [Bindable]
+        public var rightModel:RectangleModel;
+        [Bindable]
+        public var leftDownModel:RectangleModel;
+        [Bindable]
+        public var rightDownModel:RectangleModel;
+        ]]></fx:Script>
+
+
+</s:Group>
